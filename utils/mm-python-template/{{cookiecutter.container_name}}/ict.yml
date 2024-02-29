@@ -1,0 +1,13 @@
+specVersion: "0.1.0"
+name: {{ cookiecutter.plugin_name }}
+version: {{ cookiecutter.plugin_version }}
+container: {{ cookiecutter.container_name }}
+entrypoint:
+title: {{ cookiecutter.plugin_name }}
+description: {{ cookiecutter.plugin_description }}
+author: {{ cookiecutter.author }}
+contact: {{ cookiecutter.author_email }}
+repository:
+documentation:
+citation:
+
