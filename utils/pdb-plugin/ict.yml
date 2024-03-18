@@ -1,0 +1,53 @@
+specVersion: 0.1.0
+entrypoint: pdb
+name: 'labshare/download-pdb-file'
+version: 0.1.0
+container: polusai/pdb-plugin:0.1.0
+title: Download PDB file
+description: Download PDB file
+author: [Nazanin Donyapour]
+repository: https://github.com/labshare/mmtools
+documentation: https://ncats.nih.gov/preclinical/core/informatics
+contact: "Nazanin.Donyapour@axleinfo.com"
+inputs:
+- name: filter
+  required: true
+  description: filter for biobb tool
+  type: boolean
+  defaultValue: false
+  format:
+    term: boolean
+- name: config
+  required: true
+  description: PDB ID
+  type: string
+  format:
+    term: string
+    uri: http://edamontology.org/format_3727
+- name: outdir
+  required: false
+  defaultValue: '/absolute_path'
+  description: Output collection.
+  type: string
+  format:
+    term: string
+outputs:
+- name: outdir
+  required: false
+  description: Output collection.
+  type: path
+  format:
+    term: file
+ui:
+- key: inputs.config
+  title: "PDB ID input config"
+  description: "PDB ID input config"
+  type: text
+- key: inputs.filter
+  title: "Filter input"
+  description: "Filter input"
+  type: checkbox
+- key: inputs.outdir
+  title: "Output directory"
+  description: "Output directory"
+  type: text
