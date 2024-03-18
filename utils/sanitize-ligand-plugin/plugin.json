@@ -1,6 +1,6 @@
 {
   "name": "Sanitize Ligand",
-  "version": "0.1.1-dev1",
+  "version": "0.1.1-dev2",
   "title": "Sanitize Ligand",
   "description": "Handle molecules with rdkit errors gracefully.",
   "author": "Brandon Walker (brandon.walker@axleinfo.com)",
@@ -8,7 +8,7 @@
   "repository": "https://github.com/labshare/polus-plugins",
   "website": "https://ncats.nih.gov/preclinical/core/informatics",
   "citation": "",
-  "containerId": "polusai/sanitize-ligand-plugin:0.1.1-dev1",
+  "containerId": "polusai/sanitize-ligand-plugin:0.1.1-dev2",
   "baseCommand": [
     "python3",
     "-m",

@@ -189,9 +189,3 @@ def sanitize_ligand(
         if valid_ligand:
             with Chem.SDWriter(output_small_mol_ligand) as w:
                 w.write(rdkit_mol)
-
-    if len(ligand_files) == 1:
-        # if scattering with many files
-        # let the presence of the file indicate validity
-        with outdir.joinpath("valid.txt").open("w", encoding="utf-8") as f:
-            f.write(str(valid_ligand))
