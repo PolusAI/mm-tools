@@ -1,0 +1,41 @@
+specVersion: 0.1.0
+name: labshare/pdbfixer
+version: 0.1.0
+container: polusai/pdbfixer-plugin:0.1.0
+entrypoint: ""
+title: pdbfixer
+description: Fix pdbfiles.
+author: Data Scientist (data.scientist@labshare.org)
+repository: https://github.com/labshare/mmtools
+documentation: https://ncats.nih.gov/preclinical/core/informatics
+citation:
+inputs:
+- name: input_pdb_path
+  required: true
+  description:
+  type: string
+- name: input_helper_pdb_path
+  required: true
+  description:
+  type: string
+- name: add_residues
+  required: false
+  description: If set to True, adds missing residue
+  type: boolean
+- name: replace_nonstandard
+  required: false
+  description: Replace nonstandard residues with standard equivalents
+  type: boolean
+- name: add_atoms
+  required: false
+  description: What missing atoms to add, all, heavy or none
+  type: string
+- name: keep_heterogens
+  required: false
+  description: What heterogens to keep, all, water or none
+  type: string
+- name: output_pdb_path
+  required: true
+  description: Output pdb file path
+  type: string
+outputs:
