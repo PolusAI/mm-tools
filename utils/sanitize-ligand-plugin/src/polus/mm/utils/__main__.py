@@ -5,7 +5,6 @@ import logging
 from os import environ
 from pathlib import Path
 
-import filepattern as fp
 import typer
 from polus.mm.utils.sanitize_ligand import sanitize_ligand
 
@@ -22,41 +21,15 @@ app = typer.Typer(help="Sanitize Ligand.")
 
 @app.command()
 def main(
-    pattern: str = typer.Option(
+    input_small_mol_ligand: Path = typer.Option(
         ...,
-        "--pattern",
-        help="Input filepattern to be processed.",
-    ),
-    in_dir: Path = typer.Option(
-        ...,
-        "--indir",
-        help="Input directory.",
-        exists=True,
-        writable=True,
-        file_okay=False,
-        resolve_path=True,
-    ),
-    out_dir: Path = typer.Option(
-        ...,
-        "--outdir",
-        help="Output directory.",
-        exists=True,
-        writable=True,
-        file_okay=False,
-        resolve_path=True,
+        "--input_small_mol_ligand",
+        help="Input input_small_mol_ligand to be processed.",
     ),
 ) -> None:
     """Sanitize Ligand."""
-    logger.info(f"pattern: {pattern}")
-    logger.info(f"indir: {in_dir}")
-    logger.info(f"outdir: {out_dir}")
-    ligand_file_paths = []
-    ligand_files = fp.FilePattern(in_dir, pattern)
-    for input_small_mol_ligand in ligand_files():
-        ligand = input_small_mol_ligand[-1][0]
-        ligand_file_paths.append(ligand)
-
-    sanitize_ligand(ligand_file_paths, out_dir)
+    logger.info(f"input_small_mol_ligand: {input_small_mol_ligand}")
+    sanitize_ligand(input_small_mol_ligand)
 
 
 if __name__ == "__main__":

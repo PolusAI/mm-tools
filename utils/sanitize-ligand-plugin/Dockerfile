@@ -1,4 +1,6 @@
-FROM condaforge/mambaforge
+# docker build -f Dockerfile -t mrbrandonwalker/sanitize_ligand_tool .
+
+FROM python:3.11-buster
 
 # environment variables defined
 ENV EXEC_DIR="/opt/executables"
@@ -8,20 +10,11 @@ COPY pyproject.toml ${EXEC_DIR}
 COPY VERSION ${EXEC_DIR}
 COPY README.md ${EXEC_DIR}
 COPY CHANGELOG.md ${EXEC_DIR}
+# need copy src here because pyproject.toml has a reference to the src directory
+COPY src ${EXEC_DIR}/src
 
-RUN conda install -c conda-forge rdkit --yes
-
-RUN pip install filepattern
-
-RUN conda init bash
-
-RUN mamba clean --all --yes
+WORKDIR ${EXEC_DIR}
 
 ADD Dockerfile ${EXEC_DIR}
 
-COPY src ${EXEC_DIR}/src
-
 RUN pip3 install ${EXEC_DIR} --no-cache-dir
-# Default command. Additional arguments are provided through the command line
-ENTRYPOINT ["python3", "-m", "polus.mm.utils"]
-CMD ["--help"]
