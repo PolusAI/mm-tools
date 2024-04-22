@@ -1,0 +1,57 @@
+specVersion: "0.1.0"
+name: scatter_plot
+version: 0.1.0
+container: scatter-plot-plugin
+entrypoint:
+title: scatter_plot
+description: Generate a scatter plot
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: xs
+    required: true
+    description:
+    type: {'type': 'array', 'items': 'float'}
+  - name: ys
+    required: true
+    description:
+    type: {'type': 'array', 'items': 'float'}
+  - name: ys2
+    required: true
+    description:
+    type: {'type': 'array', 'items': 'float'}
+  - name: output_png_path
+    required: true
+    description: Path to the output png file
+    type: string
+    defaultValue: scatter.png
+    format:
+      uri: edam:format_3603
+outputs:
+  - name: output_png_path
+    required: true
+    description: Path to the output png file
+    type: File
+    format:
+      uri: edam:format_3603
+ui:
+  - key: inputs.xs
+    title: "xs: "
+    description: ""
+    type: {'type': 'array', 'items': 'float'}
+  - key: inputs.ys
+    title: "ys: "
+    description: ""
+    type: {'type': 'array', 'items': 'float'}
+  - key: inputs.ys2
+    title: "ys2: "
+    description: ""
+    type: {'type': 'array', 'items': 'float'}
+  - key: inputs.output_png_path
+    title: "output_png_path: "
+    description: "Path to the output png file"
+    type: string
