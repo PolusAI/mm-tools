@@ -1,0 +1,36 @@
+specVersion: "0.1.0"
+name: filter_array
+version: 0.1.0
+container: filter-array-plugin
+entrypoint:
+title: filter_array
+description: Filter array based on input boolean array
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_array
+    required: true
+    description:
+    type: Any[]
+  - name: input_bool_array
+    required: true
+    description:
+    type: boolean[]
+outputs:
+  - name: output_array
+    required: true
+    description:
+    type: Any[]
+ui:
+  - key: inputs.input_array
+    title: "input_array: "
+    description: ""
+    type: Any[]
+  - key: inputs.input_bool_array
+    title: "input_bool_array: "
+    description: ""
+    type: boolean[]
