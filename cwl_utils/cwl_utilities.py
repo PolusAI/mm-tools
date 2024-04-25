@@ -94,10 +94,10 @@ def call_cwltool(cwl_file: Path, input_yaml_path: Path) -> None:
         cwl_file (Path): The path to the CWL file.
         input_yaml_path (Path): The path to the input YAML file.
     """
-    command = ["cwltool", str(cwl_file), str(input_yaml_path)]
+    command = ["cwltool", "--debug", str(cwl_file), str(input_yaml_path)]
     completed_process = subprocess.run(
         command,
         capture_output=True,
         text=True,
     )
-    return completed_process.stdout
+    return completed_process.stdout, completed_process.stderr
