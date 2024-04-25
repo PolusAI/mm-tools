@@ -59,9 +59,10 @@ def parse_cwl_arguments(cwl_file: Path) -> dict[str, Any]:
                 cwl_type = f"{items}[]"
         # find inputs that are required
         if not default_value and cwl_type not in black_list_cwl_types:
+            cwl_format = input_data.get("format", "")
             if cwl_type == "File" or cwl_type == "File?":
-                cwl_format = input_data.get("format", "")
-                file_dict = {"class": cwl_type, "path": "", "format": cwl_format}
+                # cwltool will complain if passing File? with a File in .yml
+                file_dict = {"class": "File", "path": "", "format": cwl_format}
                 input_to_props[input_name] = file_dict
             elif cwl_type == "File[]":
                 input_to_props[input_name] = []

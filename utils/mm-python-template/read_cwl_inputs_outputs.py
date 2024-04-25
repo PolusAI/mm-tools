@@ -1,5 +1,6 @@
 """Read the inputs and outputs from a CWL file and add to cookiecutter.json."""
 import json
+import shutil
 import sys
 from pathlib import Path
 
@@ -24,11 +25,6 @@ def parse_cwl(file_path: str, keys: list[str]) -> dict:  # noqa: C901,PLR0912,PL
     for key in keys:
         parsed_data[key] = {}
         inputs = cwl_content.get(key, {})
-        # just keep all outputs in outdir
-        # dont specify each output
-        # havent determined way to read ints/floats/strings from outputs as of yet
-        if key == "outputs":
-            continue
         for input_name, input_data in inputs.items():
             input_type = input_data.get("type", "")
             if input_type == "string?":
@@ -126,16 +122,20 @@ def transform_cwl(cwl: dict, keys: list[str]) -> dict:  # noqa: C901,PLR0912
                     if "?" in input_data["type"]:
                         input_data["type"] = input_data["type"].replace("?", "")
                     input_data["python_type"] = input_data["type"]
-                    if not isinstance(input_data["python_type"], dict):
+                    if not isinstance(
+                        input_data["python_type"],
+                        dict,
+                    ) and not isinstance(input_data["python_type"], list):
                         if input_data["python_type"] in python_transforms:
                             input_data["python_type"] = python_transforms[
                                 input_data["python_type"]
                             ]
                     else:
                         python_type = input_data["python_type"]
-                        if "array" in python_type["type"]:
-                            python_type = python_type["items"]
-                            input_data["python_type"] = f"List[{python_type}]"
+                        if isinstance(python_type, str):  # noqa: SIM102
+                            if "array" in python_type["type"]:
+                                python_type = python_type["items"]
+                                input_data["python_type"] = f"List[{python_type}]"
 
     return cwl
 
@@ -191,3 +191,8 @@ insert_inputs_outputs_cookiecutter(
     json_path,
     keys,
 )
+
+source_path = Path(CWL_FILE)
+target_directory = Path("{{cookiecutter.container_name}}")
+target_path = target_directory / source_path.name
+shutil.copy(source_path, target_path)

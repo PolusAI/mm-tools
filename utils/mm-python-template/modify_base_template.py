@@ -18,11 +18,9 @@ def add_readme_options_dynamically(cookiecutter_json: dict) -> None:
         cookiecutter_json (Dict): The cookiecutter.json file as a dictionary.
     """
     # Create the Options section dynamically
-    options_section = "## Options\n\nThis plugin takes {} input arguments\
-    and {} output argument:\n\n".format(
-        len(cookiecutter_json["inputs"]),
-        len(cookiecutter_json["outputs"]),
-    )
+    options_section = f"\n## Options\n\nThis plugin takes \
+    {len(cookiecutter_json['inputs'])} \
+    input arguments and {len(cookiecutter_json['outputs'])} output argument:\n\n"
 
     # Add the table headers
     options_section += (
@@ -56,6 +54,23 @@ def add_readme_options_dynamically(cookiecutter_json: dict) -> None:
     with path.open("a") as updated_readme_file:
         updated_readme_file.write(options_section)
 
+def add_test_content(cookiecutter_json) -> None:
+    """Add the test function to the plugin file."""
+    package_name = cookiecutter_json["plugin_package"].split(".")[-1]
+    def_string = f"def test_{package_name}() -> None:\n"
+    def_string += f'    """Test {package_name}."""\n'
+    def_string += f"    pass\n"
+
+    path = (
+        Path("{{cookiecutter.container_name}}")
+        / "tests"
+        / "test_{{cookiecutter.package_name}}.py"
+    )
+
+    with path.open("a") as file:
+        file.write("\n")
+        file.write(def_string)
+
 
 def add_function_arguments_dynamically(cookiecutter_json: dict) -> None:
     """Add the function arguments to the plugin file.
@@ -65,9 +80,8 @@ def add_function_arguments_dynamically(cookiecutter_json: dict) -> None:
     """
     package_name = cookiecutter_json["plugin_package"].split(".")[-1]
     def_string = f"def {package_name}("
-    dict_items = ["inputs", "outputs"]
-    # add top level imports
-    import_string = "from typing import List\nfrom pathlib import Path\n"
+    dict_items = ["inputs"]
+
     # create definition string
     for item in dict_items:
         for key, value in cookiecutter_json[item].items():
@@ -80,7 +94,7 @@ def add_function_arguments_dynamically(cookiecutter_json: dict) -> None:
                 original_key = key.replace("_pattern", "")
                 new_python_type = "List[Path]"
                 def_string += f"{original_key}: {new_python_type}, "
-    def_string = def_string[:-2] + "):"
+    def_string = def_string[:-2] + ")"
     # now add the docstring
     docstring = f"    '''{cookiecutter_json['plugin_name']}.\n\n    Args:\n"
     for item in dict_items:
@@ -101,9 +115,7 @@ def add_function_arguments_dynamically(cookiecutter_json: dict) -> None:
 
     with path.open("a") as file:
         file.write(
-            import_string
-            + "\n"
-            + def_string
+            def_string
             + "\n"
             + docstring
             + "    Returns:\n        None\n    '''\n    pass\n",
@@ -119,7 +131,7 @@ def add_main_function_dynamically(cookiecutter_json: dict) -> None:
     # Create the main function string
     main_function_string = "\n\n@app.command()\ndef main("
 
-    dict_items = ["inputs", "outputs"]
+    dict_items = ["inputs"]
     for item in dict_items:
         for key, value in cookiecutter_json[item].items():
             main_function_string += (
@@ -169,17 +181,22 @@ def add_ict_inputs_outputs_dynamically(cookiecutter_json: dict) -> None:
     array = ["inputs", "outputs"]
     with path.open("a") as updated_ict_file:
         for item in array:
+            if len(cookiecutter_json[item]) == 0:
+                continue
             updated_ict_file.write(f"{item}:\n")
             for key, value in cookiecutter_json[item].items():
                 updated_ict_file.write(f"  - name: {key}\n")
                 updated_ict_file.write("    required: true\n")
+                # remove character : from description because of yaml
+                value["description"] = value["description"].replace(":", "")
                 updated_ict_file.write(f"    description: {value['description']}\n")
                 updated_ict_file.write(f"    type: {value['type']}\n")
                 if "default" in value:
                     updated_ict_file.write(f"    defaultValue: {value['default']}\n")
                 if "format" in value:
                     uris = value["format"]
-                    uris = ", ".join(uris)
+                    if isinstance(uris, list):
+                        uris = ", ".join(uris)
                     updated_ict_file.write("    format:\n")
                     updated_ict_file.write(f"      uri: {uris}\n")
         updated_ict_file.write("ui:\n")
@@ -210,6 +227,7 @@ for item in base_command.split():
 
 add_readme_options_dynamically(cookiecutter_data)
 add_ict_inputs_outputs_dynamically(cookiecutter_data)
+add_test_content(cookiecutter_data)
 if ADD_SOURCE:
     add_function_arguments_dynamically(cookiecutter_data)
     add_main_function_dynamically(cookiecutter_data)
