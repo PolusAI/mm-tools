@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "polus-mm-utils-pose-cluster-filter"
+version = "0.1.0"
+description = "Cluster poses in protein and take max confident pose for each cluster"
+authors = ["Data Scientist <data.scientist@labshare.org>"]
+readme = "README.md"
+packages = [{include = "polus", from = "src"}]
+
+[tool.poetry.dependencies]
+typer = "^0.7.0"
+
+[tool.poetry.group.dev.dependencies]
+bump2version = "^1.0.1"
+pytest = "^7.4"
+pytest-sugar = "^0.9.6"
+pre-commit = "^3.2.1"
+black = "^23.3.0"
+mypy = "^1.1.1"
+ruff = "^0.0.270"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]

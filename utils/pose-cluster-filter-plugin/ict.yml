@@ -1,0 +1,41 @@
+specVersion: "0.1.0"
+name: pose_cluster_filter
+version: 0.1.0
+container: pose-cluster-filter-plugin
+entrypoint:
+title: pose_cluster_filter
+description: Cluster poses in protein and take max confident pose for each cluster
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: centroid_cutoff
+    required: true
+    description:
+    type: float
+    defaultValue: 5
+  - name: predicted_poses
+    required: true
+    description:
+    type: File[]
+    format:
+      uri: edam:format_3814
+outputs:
+  - name: filtered_poses
+    required: true
+    description:
+    type: File[]
+    format:
+      uri: edam:format_3814
+ui:
+  - key: inputs.centroid_cutoff
+    title: "centroid_cutoff: "
+    description: ""
+    type: float
+  - key: inputs.predicted_poses
+    title: "predicted_poses: "
+    description: ""
+    type: File[]
