@@ -1,0 +1,53 @@
+specVersion: "0.1.0"
+name: zip_top
+version: 0.1.0
+container: zip-top-plugin
+entrypoint:
+title: zip_top
+description: zips a gromacs topology TOP file (and/or itp include file).
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_top_path
+    required: true
+    description: Input topology file, Type string, File type input, Accepted formats top, Example file https//github.com/bioexcel/biobb_md/raw/master/biobb_md/test/data/gromacs/mdrun.top
+    type: File
+    format:
+      uri: edam:format_3880
+  - name: input_itp_path
+    required: true
+    description: Input topology include file, Type string, File type input, Accepted formats top, Example file https//github.com/bioexcel/biobb_md/raw/master/biobb_md/test/data/gromacs/mdrun.top
+    type: File
+    format:
+      uri: edam:format_3883
+  - name: output_top_zip_path
+    required: true
+    description:
+    type: string
+    defaultValue: system.zip
+    format:
+      uri: edam:format_2330
+outputs:
+  - name: output_top_zip_path
+    required: true
+    description: Output zip file, Type string, File type output, Format zip, Example file https//github.com/bioexcel/biobb_md/blob/master/biobb_md/test/data/gromacs/genion.zip
+    type: File
+    format:
+      uri: edam:format_3987
+ui:
+  - key: inputs.input_top_path
+    title: "input_top_path: "
+    description: "Input topology file, Type string, File type input, Accepted formats top, Example file https//github.com/bioexcel/biobb_md/raw/master/biobb_md/test/data/gromacs/mdrun.top"
+    type: File
+  - key: inputs.input_itp_path
+    title: "input_itp_path: "
+    description: "Input topology include file, Type string, File type input, Accepted formats top, Example file https//github.com/bioexcel/biobb_md/raw/master/biobb_md/test/data/gromacs/mdrun.top"
+    type: File
+  - key: inputs.output_top_zip_path
+    title: "output_top_zip_path: "
+    description: ""
+    type: string
