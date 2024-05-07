@@ -1,0 +1,51 @@
+specVersion: "0.1.0"
+name: gmx_energy
+version: 0.1.0
+container: gmx-energy-plugin
+entrypoint:
+title: gmx_energy
+description: Wrapper of the GROMACS energy module for extracting energy components from a given GROMACS energy file.
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_energy_path
+    required: true
+    description: Path to the input EDR file, Type string, File type input, Accepted formats edr, Example file https//github.com/bioexcel/biobb_analysis/raw/master/biobb_analysis/test/data/gromacs/energy.edr
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: output_xvg_path
+    required: true
+    description: Path to the XVG output file, Type string, File type output, Accepted formats xvg, Example file https//github.com/bioexcel/biobb_analysis/raw/master/biobb_analysis/test/reference/gromacs/ref_energy.xvg
+    type: string
+    defaultValue: system.xvg
+    format:
+      uri: edam:format_2030
+  - name: config
+    required: true
+    description: Advanced configuration options for biobb_analysis GMXEnergy. This should be passed as a string containing a dict. The possible options to include here are listed under 'properties' in the biobb_analysis GMXEnergy documentation https//biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_energy
+    type: string
+outputs:
+  - name: output_xvg_path
+    required: true
+    description: Path to the XVG output file
+    type: File
+    format:
+      uri: edam:format_2030
+ui:
+  - key: inputs.input_energy_path
+    title: "input_energy_path: "
+    description: "Path to the input EDR file, Type string, File type input, Accepted formats edr, Example file https//github.com/bioexcel/biobb_analysis/raw/master/biobb_analysis/test/data/gromacs/energy.edr"
+    type: File
+  - key: inputs.output_xvg_path
+    title: "output_xvg_path: "
+    description: "Path to the XVG output file, Type string, File type output, Accepted formats xvg, Example file https//github.com/bioexcel/biobb_analysis/raw/master/biobb_analysis/test/reference/gromacs/ref_energy.xvg"
+    type: string
+  - key: inputs.config
+    title: "config: "
+    description: "Advanced configuration options for biobb_analysis GMXEnergy. This should be passed as a string containing a dict. The possible options to include here are listed under 'properties' in the biobb_analysis GMXEnergy documentation https//biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_energy"
+    type: string
