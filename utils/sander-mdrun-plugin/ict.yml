@@ -1,0 +1,176 @@
+specVersion: "0.1.0"
+name: sander_mdrun
+version: 0.1.0
+container: sander-mdrun-plugin
+entrypoint:
+title: sander_mdrun
+description: Wrapper of the AmberTools (AMBER MD Package) sander tool module.
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_top_path
+    required: true
+    description: Input topology file (AMBER ParmTop), Type string, File type input, Accepted formats top, parmtop, prmtop, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/cln025.prmtop
+    type: File
+    format:
+      uri: edam:format_3881, edam:format_3881, edam:format_3881
+  - name: input_crd_path
+    required: true
+    description: Input coordinates file (AMBER crd), Type string, File type input, Accepted formats crd, mdcrd, inpcrd, netcdf, nc, ncrst, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/cln025.inpcrd
+    type: File
+    format:
+      uri: edam:format_3878, edam:format_3878, edam:format_3878, edam:format_3650, edam:format_3650, edam:format_3886
+  - name: output_log_path
+    required: true
+    description: Output log file, Type string, File type output, Accepted formats log, out, txt, o, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.log
+    type: string
+    defaultValue: system.log
+    format:
+      uri: edam:format_2330, edam:format_2330, edam:format_2330, edam:format_2330
+  - name: output_traj_path
+    required: true
+    description: Output trajectory file, Type string, File type output, Accepted formats trj, crd, mdcrd, x, netcdf, nc, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.x
+    type: string
+    defaultValue: system.trj
+    format:
+      uri: edam:format_3878, edam:format_3878, edam:format_3878, edam:format_3878, edam:format_3650, edam:format_3650
+  - name: output_rst_path
+    required: true
+    description: Output restart file, Type string, File type output, Accepted formats rst, rst7, netcdf, nc, ncrst, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.rst
+    type: string
+    defaultValue: system.rst
+    format:
+      uri: edam:format_3886, edam:format_3886, edam:format_3650, edam:format_3650, edam:format_3886
+  - name: input_mdin_path
+    required: true
+    description: Input configuration file (MD run options) (AMBER mdin), Type string, File type input, Accepted formats mdin, in, txt, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/npt.mdin
+    type: File
+    format:
+      uri: edam:format_2330, edam:format_2330, edam:format_2330
+  - name: input_cpin_path
+    required: true
+    description: Input constant pH file (AMBER cpin), Type string, File type input, Accepted formats cpin, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/cln025.cpin
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: input_ref_path
+    required: true
+    description: Input reference coordinates for position restraints, Type string, File type input, Accepted formats rst, rst7, netcdf, nc, ncrst, crd, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/sander.rst
+    type: File
+    format:
+      uri: edam:format_3886, edam:format_3886, edam:format_3650, edam:format_3650, edam:format_3886, edam:format_3878
+  - name: output_cpout_path
+    required: true
+    description: Output constant pH file (AMBER cpout), Type string, File type output, Accepted formats cpout, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.cpout
+    type: string
+    defaultValue: system.cpout
+    format:
+      uri: edam:format_2330
+  - name: output_cprst_path
+    required: true
+    description: Output constant pH restart file (AMBER rstout), Type string, File type output, Accepted formats cprst, rst, rst7, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.cprst
+    type: string
+    defaultValue: system.cprst
+    format:
+      uri: edam:format_3886, edam:format_3886, edam:format_3886
+  - name: output_mdinfo_path
+    required: true
+    description: Output MD info, Type string, File type output, Accepted formats mdinfo, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.mdinfo
+    type: string
+    defaultValue: system.mdinfo
+    format:
+      uri: edam:format_2330
+  - name: config
+    required: true
+    description: Advanced configuration options for biobb_amber SanderMDRun. This should be passed as a string containing a dict. The possible options to include here are listed under 'properties' in the biobb_amber SanderMDRun documentation https//biobb-amber.readthedocs.io/en/latest/sander.html#module-sander.sander_mdrun
+    type: string
+outputs:
+  - name: output_log_path
+    required: true
+    description: Output log file
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: output_traj_path
+    required: true
+    description: Output trajectory file
+    type: File
+    format:
+      uri: edam:format_3878
+  - name: output_rst_path
+    required: true
+    description: Output restart file
+    type: File
+    format:
+      uri: edam:format_3886
+  - name: output_cpout_path
+    required: true
+    description: Output constant pH file (AMBER cpout)
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: output_cprst_path
+    required: true
+    description: Output constant pH restart file (AMBER rstout)
+    type: File
+    format:
+      uri: edam:format_3886
+  - name: output_mdinfo_path
+    required: true
+    description: Output MD info
+    type: File
+    format:
+      uri: edam:format_2330
+ui:
+  - key: inputs.input_top_path
+    title: "input_top_path: "
+    description: "Input topology file (AMBER ParmTop), Type string, File type input, Accepted formats top, parmtop, prmtop, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/cln025.prmtop"
+    type: File
+  - key: inputs.input_crd_path
+    title: "input_crd_path: "
+    description: "Input coordinates file (AMBER crd), Type string, File type input, Accepted formats crd, mdcrd, inpcrd, netcdf, nc, ncrst, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/cln025.inpcrd"
+    type: File
+  - key: inputs.output_log_path
+    title: "output_log_path: "
+    description: "Output log file, Type string, File type output, Accepted formats log, out, txt, o, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.log"
+    type: string
+  - key: inputs.output_traj_path
+    title: "output_traj_path: "
+    description: "Output trajectory file, Type string, File type output, Accepted formats trj, crd, mdcrd, x, netcdf, nc, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.x"
+    type: string
+  - key: inputs.output_rst_path
+    title: "output_rst_path: "
+    description: "Output restart file, Type string, File type output, Accepted formats rst, rst7, netcdf, nc, ncrst, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.rst"
+    type: string
+  - key: inputs.input_mdin_path
+    title: "input_mdin_path: "
+    description: "Input configuration file (MD run options) (AMBER mdin), Type string, File type input, Accepted formats mdin, in, txt, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/npt.mdin"
+    type: File
+  - key: inputs.input_cpin_path
+    title: "input_cpin_path: "
+    description: "Input constant pH file (AMBER cpin), Type string, File type input, Accepted formats cpin, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/cln025.cpin"
+    type: File
+  - key: inputs.input_ref_path
+    title: "input_ref_path: "
+    description: "Input reference coordinates for position restraints, Type string, File type input, Accepted formats rst, rst7, netcdf, nc, ncrst, crd, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/sander/sander.rst"
+    type: File
+  - key: inputs.output_cpout_path
+    title: "output_cpout_path: "
+    description: "Output constant pH file (AMBER cpout), Type string, File type output, Accepted formats cpout, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.cpout"
+    type: string
+  - key: inputs.output_cprst_path
+    title: "output_cprst_path: "
+    description: "Output constant pH restart file (AMBER rstout), Type string, File type output, Accepted formats cprst, rst, rst7, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.cprst"
+    type: string
+  - key: inputs.output_mdinfo_path
+    title: "output_mdinfo_path: "
+    description: "Output MD info, Type string, File type output, Accepted formats mdinfo, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/reference/sander/sander.mdinfo"
+    type: string
+  - key: inputs.config
+    title: "config: "
+    description: "Advanced configuration options for biobb_amber SanderMDRun. This should be passed as a string containing a dict. The possible options to include here are listed under 'properties' in the biobb_amber SanderMDRun documentation https//biobb-amber.readthedocs.io/en/latest/sander.html#module-sander.sander_mdrun"
+    type: string
