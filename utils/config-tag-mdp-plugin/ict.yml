@@ -1,0 +1,63 @@
+specVersion: "0.1.0"
+name: config_tag_mdp
+version: 0.1.0
+container: config-tag-mdp-plugin
+entrypoint:
+title: config_tag_mdp
+description: Returns a dictionary of the given arguments as a JSON-encoded string.
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: config
+    required: true
+    description: A dictionary of the given arguments as a JSON-encoded string.
+    type: string
+    defaultValue: {}
+    format:
+      uri: edam:format_2330
+  - name: nsteps
+    required: true
+    description: The number of timesteps
+    type: int
+  - name: dt
+    required: true
+    description: The length of each timestep
+    type: float
+  - name: ref-t
+    required: true
+    description: The nominal temperature
+    type: float
+  - name: ref-p
+    required: true
+    description: The nominal pressure
+    type: float
+outputs:
+  - name: output_config_string
+    required: true
+    description: A dictionary of the given arguments as a JSON-encoded string.
+    type: string
+ui:
+  - key: inputs.config
+    title: "config: "
+    description: "A dictionary of the given arguments as a JSON-encoded string."
+    type: string
+  - key: inputs.nsteps
+    title: "nsteps: "
+    description: "The number of timesteps"
+    type: int
+  - key: inputs.dt
+    title: "dt: "
+    description: "The length of each timestep"
+    type: float
+  - key: inputs.ref-t
+    title: "ref-t: "
+    description: "The nominal temperature"
+    type: float
+  - key: inputs.ref-p
+    title: "ref-p: "
+    description: "The nominal pressure"
+    type: float
