@@ -1,0 +1,163 @@
+specVersion: "0.1.0"
+name: mdrun
+version: 0.1.0
+container: mdrun-plugin
+entrypoint:
+title: mdrun
+description: Wrapper of the GROMACS mdrun module.
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_tpr_path
+    required: true
+    description: Path to the portable binary run input file TPR, Type string, File type input, Accepted formats tpr, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/data/gromacs/mdrun.tpr
+    type: File
+    format:
+      uri: edam:format_2333
+  - name: output_crd_path
+    required: true
+    description: Path to the output GROMACS structure GRO file, Type string, File type output, Accepted formats gro, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/reference/gromacs/ref_mdrun.gro
+    type: string
+    defaultValue: system.gro
+    format:
+      uri: edam:format_2033
+  - name: output_edr_path
+    required: true
+    description: Path to the output GROMACS portable energy file EDR, Type string, File type output, Accepted formats edr, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/reference/gromacs/ref_mdrun.edr
+    type: string
+    defaultValue: system.edr
+    format:
+      uri: edam:format_2330
+  - name: output_log_path
+    required: true
+    description: Path to the output GROMACS trajectory log file LOG, Type string, File type output, Accepted formats log, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/reference/gromacs/ref_mdrun.log
+    type: string
+    defaultValue: system.log
+    format:
+      uri: edam:format_2330
+  - name: output_trr_path
+    required: true
+    description: Path to the GROMACS uncompressed raw trajectory file TRR, Type string, File type output, Accepted formats trr, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/reference/gromacs/ref_mdrun.trr
+    type: string
+    defaultValue: system.trr
+    format:
+      uri: edam:format_3910
+  - name: input_cpt_path
+    required: true
+    description: Path to the input GROMACS checkpoint file CPT, Type string, File type input, Accepted formats cpt, Example file null
+    type: File
+    format:
+      uri: edam:format_2333
+  - name: output_xtc_path
+    required: true
+    description: Path to the GROMACS compressed trajectory file XTC, Type string, File type output, Accepted formats xtc, Example file null
+    type: string
+    defaultValue: system.xtc
+    format:
+      uri: edam:format_3875
+  - name: output_cpt_path
+    required: true
+    description: Path to the output GROMACS checkpoint file CPT, Type string, File type output, Accepted formats cpt, Example file null
+    type: string
+    defaultValue: system.cpt
+    format:
+      uri: edam:format_2333
+  - name: output_dhdl_path
+    required: true
+    description: Path to the output dhdl.xvg file only used when free energy calculation is turned on, Type string, File type output, Accepted formats xvg, Example file null
+    type: string
+    defaultValue: system.xvg
+    format:
+      uri: edam:format_2033
+  - name: config
+    required: true
+    description: Advanced configuration options for biobb_gromacs Mdrun. This should be passed as a string containing a dict. The possible options to include here are listed under 'properties' in the biobb_gromacs Mdrun documentation https//biobb-gromacs.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun
+    type: string
+outputs:
+  - name: output_crd_path
+    required: true
+    description: Path to the output GROMACS structure GRO file
+    type: File
+    format:
+      uri: edam:format_2033
+  - name: output_edr_path
+    required: true
+    description: Path to the output GROMACS portable energy file EDR
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: output_log_path
+    required: true
+    description: Path to the output GROMACS trajectory log file LOG
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: output_trr_path
+    required: true
+    description: Path to the GROMACS uncompressed raw trajectory file TRR
+    type: File
+    format:
+      uri: edam:format_3910
+  - name: output_xtc_path
+    required: true
+    description: Path to the GROMACS compressed trajectory file XTC
+    type: File
+    format:
+      uri: edam:format_3875
+  - name: output_cpt_path
+    required: true
+    description: Path to the output GROMACS checkpoint file CPT
+    type: File
+    format:
+      uri: edam:format_2333
+  - name: output_dhdl_path
+    required: true
+    description: Path to the output dhdl.xvg file only used when free energy calculation is turned on
+    type: File
+    format:
+      uri: edam:format_2033
+ui:
+  - key: inputs.input_tpr_path
+    title: "input_tpr_path: "
+    description: "Path to the portable binary run input file TPR, Type string, File type input, Accepted formats tpr, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/data/gromacs/mdrun.tpr"
+    type: File
+  - key: inputs.output_crd_path
+    title: "output_crd_path: "
+    description: "Path to the output GROMACS structure GRO file, Type string, File type output, Accepted formats gro, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/reference/gromacs/ref_mdrun.gro"
+    type: string
+  - key: inputs.output_edr_path
+    title: "output_edr_path: "
+    description: "Path to the output GROMACS portable energy file EDR, Type string, File type output, Accepted formats edr, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/reference/gromacs/ref_mdrun.edr"
+    type: string
+  - key: inputs.output_log_path
+    title: "output_log_path: "
+    description: "Path to the output GROMACS trajectory log file LOG, Type string, File type output, Accepted formats log, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/reference/gromacs/ref_mdrun.log"
+    type: string
+  - key: inputs.output_trr_path
+    title: "output_trr_path: "
+    description: "Path to the GROMACS uncompressed raw trajectory file TRR, Type string, File type output, Accepted formats trr, Example file https//github.com/bioexcel/biobb_gromacs/raw/master/biobb_gromacs/test/reference/gromacs/ref_mdrun.trr"
+    type: string
+  - key: inputs.input_cpt_path
+    title: "input_cpt_path: "
+    description: "Path to the input GROMACS checkpoint file CPT, Type string, File type input, Accepted formats cpt, Example file null"
+    type: File
+  - key: inputs.output_xtc_path
+    title: "output_xtc_path: "
+    description: "Path to the GROMACS compressed trajectory file XTC, Type string, File type output, Accepted formats xtc, Example file null"
+    type: string
+  - key: inputs.output_cpt_path
+    title: "output_cpt_path: "
+    description: "Path to the output GROMACS checkpoint file CPT, Type string, File type output, Accepted formats cpt, Example file null"
+    type: string
+  - key: inputs.output_dhdl_path
+    title: "output_dhdl_path: "
+    description: "Path to the output dhdl.xvg file only used when free energy calculation is turned on, Type string, File type output, Accepted formats xvg, Example file null"
+    type: string
+  - key: inputs.config
+    title: "config: "
+    description: "Advanced configuration options for biobb_gromacs Mdrun. This should be passed as a string containing a dict. The possible options to include here are listed under 'properties' in the biobb_gromacs Mdrun documentation https//biobb-gromacs.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun"
+    type: string
