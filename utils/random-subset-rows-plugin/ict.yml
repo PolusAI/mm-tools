@@ -1,0 +1,57 @@
+specVersion: "0.1.0"
+name: random_subset_rows
+version: 0.1.0
+container: random-subset-rows-plugin
+entrypoint:
+title: random_subset_rows
+description: return subset indices for array with sample selection using a random seed
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_file
+    required: true
+    description: Input file
+    type: File
+  - name: num_of_samples
+    required: true
+    description:
+    type: int
+  - name: random_seed
+    required: true
+    description: Random seed for reproducibility
+    type: int
+  - name: output_file
+    required: true
+    description: Output file
+    type: string
+    defaultValue: Index.txt
+outputs:
+  - name: output_file
+    required: true
+    description:
+    type: File
+  - name: output_indices
+    required: true
+    description:
+    type: int[]
+ui:
+  - key: inputs.input_file
+    title: "input_file: "
+    description: ""
+    type: File
+  - key: inputs.num_of_samples
+    title: "num_of_samples: "
+    description: ""
+    type: int
+  - key: inputs.random_seed
+    title: "random_seed: "
+    description: ""
+    type: int
+  - key: inputs.output_file
+    title: "output_file: "
+    description: ""
+    type: string
