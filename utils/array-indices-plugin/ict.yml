@@ -1,0 +1,36 @@
+specVersion: "0.1.0"
+name: array_indices
+version: 0.1.0
+container: array-indices-plugin
+entrypoint:
+title: array_indices
+description: return a subset from a array based on input indices
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_indices
+    required: true
+    description:
+    type: int[]
+  - name: input_array
+    required: true
+    description:
+    type: Any
+outputs:
+  - name: output_array
+    required: true
+    description: Path to the output array (subset)
+    type: Any
+ui:
+  - key: inputs.input_indices
+    title: "input_indices: "
+    description: ""
+    type: int[]
+  - key: inputs.input_array
+    title: "input_array: "
+    description: ""
+    type: Any
