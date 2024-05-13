@@ -1,0 +1,69 @@
+specVersion: "0.1.0"
+name: check_linear_fit
+version: 0.1.0
+container: check-linear-fit-tool
+entrypoint:
+title: check_linear_fit
+description: check_linear_fit
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: script
+    required: true
+    description:
+    type: string
+    defaultValue: /check_linear_fit.py
+  - name: xs
+    required: true
+    description:
+    type: {'type': 'array', 'items': 'float'}
+  - name: ys
+    required: true
+    description:
+    type: {'type': 'array', 'items': 'float'}
+  - name: tol_quad
+    required: true
+    description:
+    type: float
+  - name: slope_min
+    required: true
+    description:
+    type: float
+  - name: slope_max
+    required: true
+    description:
+    type: float
+outputs:
+  - name: success
+    required: true
+    description:
+    type: boolean
+ui:
+  - key: inputs.script
+    title: "script: "
+    description: ""
+    type: string
+  - key: inputs.xs
+    title: "xs: "
+    description: ""
+    type: {'type': 'array', 'items': 'float'}
+  - key: inputs.ys
+    title: "ys: "
+    description: ""
+    type: {'type': 'array', 'items': 'float'}
+  - key: inputs.tol_quad
+    title: "tol_quad: "
+    description: ""
+    type: float
+  - key: inputs.slope_min
+    title: "slope_min: "
+    description: ""
+    type: float
+  - key: inputs.slope_max
+    title: "slope_max: "
+    description: ""
+    type: float
