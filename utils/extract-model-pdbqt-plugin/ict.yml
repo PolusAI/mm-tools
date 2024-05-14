@@ -1,0 +1,51 @@
+specVersion: "0.1.0"
+name: extract_model_pdbqt
+version: 0.1.0
+container: extract-model-pdbqt-plugin
+entrypoint:
+title: extract_model_pdbqt
+description: Extracts a model from a PDBQT file with several models.
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_pdbqt_path
+    required: true
+    description: Input PDBQT file, Type string, File type input, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/data/utils/models.pdbqt
+    type: File
+    format:
+      uri: edam:format_1476
+  - name: output_pdbqt_path
+    required: true
+    description: Output PDBQT file, Type string, File type output, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/utils/ref_extract_model.pdbqt
+    type: string
+    defaultValue: system.pdbqt
+    format:
+      uri: edam:format_1476
+  - name: config
+    required: true
+    description: Advanced configuration options for biobb_vs ExtractModelPDBQT. This should be passed as a string containing a dict. The possible options to include here are listed under 'properties' in the biobb_vs ExtractModelPDBQT documentation https//biobb-vs.readthedocs.io/en/latest/utils.html#module-utils.extract_model_pdbqt
+    type: string
+outputs:
+  - name: output_pdbqt_path
+    required: true
+    description: Output PDBQT file
+    type: File
+    format:
+      uri: edam:format_1476
+ui:
+  - key: inputs.input_pdbqt_path
+    title: "input_pdbqt_path: "
+    description: "Input PDBQT file, Type string, File type input, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/data/utils/models.pdbqt"
+    type: File
+  - key: inputs.output_pdbqt_path
+    title: "output_pdbqt_path: "
+    description: "Output PDBQT file, Type string, File type output, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/utils/ref_extract_model.pdbqt"
+    type: string
+  - key: inputs.config
+    title: "config: "
+    description: "Advanced configuration options for biobb_vs ExtractModelPDBQT. This should be passed as a string containing a dict. The possible options to include here are listed under 'properties' in the biobb_vs ExtractModelPDBQT documentation https//biobb-vs.readthedocs.io/en/latest/utils.html#module-utils.extract_model_pdbqt"
+    type: string
