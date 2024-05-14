@@ -20,7 +20,5 @@ def test_preprocess_molgan_database() -> None:
     input_to_props["input_sdf_path"]["path"] = file_path
     input_yaml_path = Path("preprocess_molgan_database.yml")
     create_input_yaml(input_to_props, input_yaml_path)
-    stdout, stderr = call_cwltool(cwl_file, input_yaml_path)
-    print("stdout", stdout)  # noqa: T201
-    print("stderr", stderr)  # noqa: T201
+    call_cwltool(cwl_file, input_yaml_path)
     assert Path("system.pkl").exists()

@@ -4,7 +4,7 @@ MolGAN tool for generating small molecules
 
 ## Options
 
-This plugin takes     2     input arguments and 1 output argument:
+This plugin takes 2 input arguments and 1 output argument:
 
 | Name          | Description             | I/O    | Type   | Default |
 |---------------|-------------------------|--------|--------|---------|

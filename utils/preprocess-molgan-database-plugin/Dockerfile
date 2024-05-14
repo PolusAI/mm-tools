@@ -1,22 +1,35 @@
+# docker build -f Dockerfile -t mrbrandonwalker/molgan-tool .
 FROM condaforge/mambaforge
+# NOT mambaforge-pypy3 (rdkit is incompatible with pypy)
 
-ENV EXEC_DIR="/opt/executables"
-ENV POLUS_LOG="INFO"
-RUN mkdir -p ${EXEC_DIR}
+# RDKIT logging
+ENV RDKIT_ERROR_LOGGING="OFF"
 
+RUN apt-get update && apt-get install -y wget git
 
-# Work directory defined in the base container
-# WORKDIR ${EXEC_DIR}
+# Clone MolGAN
+RUN git clone https://github.com/ndonyapour/MolGAN.git
 
-COPY pyproject.toml ${EXEC_DIR}
-COPY VERSION ${EXEC_DIR}
-COPY README.md ${EXEC_DIR}
-COPY CHANGELOG.md ${EXEC_DIR}
+# Build and install python bindings
+# MolGAN was initially implemented using TensorFlow v1, and TensorFlow version 2 offers support
+# for v1 functionalities. However, it's important to mention that the current patch for upgrading
+# to v2 is not truly upgrading v1 API to v2 API, but calling legacy v1 API from v2 package via
+# "tf.compat.v1". Essentially, it’s still v1.certain. Truely upgrade to v2 requires rewriting most
+# functions of MolGAN, including model creation, data processing, and training.
 
-# Install needed packages here
+RUN mamba install -c conda-forge rdkit "tensorflow<2.13" numpy scikit-learn xorg-libxrender
 
-COPY src ${EXEC_DIR}/src
+# Make sure rdkit is activated
+RUN python -c "import rdkit"
 
-RUN pip3 install ${EXEC_DIR} --no-cache-dir
+# Train a Model
+WORKDIR /MolGAN
 
-CMD ["--help"]
+# Download the gdb9 database
+RUN bash data/download_dataset.sh data/gdb9.sdf data/NP_score.pkl.gz data/SA_score.pkl.gz
+
+# Preprocess the data
+RUN python utils/sparse_molecular_dataset.py --input_sdf_path data/gdb9.sdf --output_data_path data/data.pkl
+
+# Training step
+RUN python example.py --input_data_path data/data.pkl --num_epochs 10 --output_log_path log --input_NP_Score_path data/NP_score.pkl.gz  --input_SA_Score_path data/SA_score.pkl.gz --output_model_dir ./trained_models
