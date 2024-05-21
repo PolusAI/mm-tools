@@ -1,4 +1,4 @@
-# docker build -f Dockerfile -t mrbrandonwalker/combine_structure_tool .
+# docker build -f Dockerfile -t polusai/combine-structure-tool:0.1.0 .
 FROM condaforge/mambaforge
 
 ENV EXEC_DIR="/opt/executables"

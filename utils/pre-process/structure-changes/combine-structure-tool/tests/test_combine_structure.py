@@ -27,12 +27,12 @@ def test_combine_structure_cwl() -> None:
     input_structure1 = Path(__file__).resolve().parent / Path("5umx_protein.xyz")
     input_structure2 = Path(__file__).resolve().parent / Path("5umx_ligand.xyz")
     output_structure_path = "combined_structure.xyz"
-    cwl_file_str = "combine_structure.cwl"
+    cwl_file_str = "combine_structure_0.1.0.cwl"
     cwl_file = Path(__file__).resolve().parent.parent / Path(cwl_file_str)
     input_to_props = parse_cwl_arguments(cwl_file)
     input_to_props["input_structure1"]["path"] = str(input_structure1)
     input_to_props["input_structure2"]["path"] = str(input_structure2)
-    input_yaml_path = Path("combine_structure.yml")
+    input_yaml_path = Path("combine_structure_0.1.0.yml")
     create_input_yaml(input_to_props, input_yaml_path)
     call_cwltool(cwl_file, input_yaml_path)
     assert Path(output_structure_path).exists()

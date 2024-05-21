@@ -1,7 +1,7 @@
 specVersion: "0.1.0"
 name: combine_structure
 version: 0.1.0
-container: combine-structure-plugin
+container: combine-structure-tool
 entrypoint:
 title: combine_structure
 description: A tool that employs RDKit to combine two XYZ structures in a single PDB file.
