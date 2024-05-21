@@ -1,7 +1,7 @@
 specVersion: 0.1.0
 name: labshare/pdbfixer
 version: 0.1.0
-container: polusai/pdbfixer-plugin:0.1.0
+container: polusai/pdbfixer-tool:0.1.0
 entrypoint: ""
 title: pdbfixer
 description: Fix pdbfiles.
