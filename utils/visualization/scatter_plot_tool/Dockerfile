@@ -1,4 +1,4 @@
-# docker build -f Dockerfile -t mrbrandonwalker/scatter_plot .
+# docker build -f Dockerfile -t polusai/scatter-plot-tool:0.1.0 .
 FROM condaforge/mambaforge
 
 ENV EXEC_DIR="/opt/executables"

@@ -1,7 +1,7 @@
 specVersion: "0.1.0"
 name: scatter_plot
 version: 0.1.0
-container: scatter-plot-plugin
+container: scatter-plot-tool
 entrypoint:
 title: scatter_plot
 description: Generate a scatter plot

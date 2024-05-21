@@ -12,7 +12,7 @@ baseCommand: ["python", "-m", "polus.mm.utils.scatter_plot"]
 
 hints:
   DockerRequirement:
-    dockerPull: mrbrandonwalker/scatter_plot
+    dockerPull: polusai/scatter-plot-tool:@sha256:e74cd51e91070e6db6ec4d4d9063cbd29119d274e3d2875c088d0a56e912fae3
 
 inputs:
 
