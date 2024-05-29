@@ -1,0 +1,114 @@
+specVersion: "0.1.0"
+name: train_molgan_model
+version: 0.1.0
+container: train-molgan-model-plugin
+entrypoint:
+title: train_molgan_model
+description: MolGAN tool for generating small molecules
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_data_path
+    required: true
+    description: Path to the input data file, Type File, File type input, Accepted formats pkl, Example file https//github.com/bioexcel/biobb_ml/raw/master/biobb_ml/test/reference/classification/ref_output_model_support_vector_machine.pkl
+    type: File
+    defaultValue: system.pkl
+    format:
+      uri: edam:format_3653
+  - name: input_NP_Score_path
+    required: true
+    description: Output ceout file (AMBER ceout), Type File, File type input, Accepted formats gz, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/cphstats/sander.ceout.gz
+    type: File
+    defaultValue: NP.gz
+    format:
+      uri: edam:format_3987
+  - name: input_SA_Score_path
+    required: true
+    description: Output ceout file (AMBER ceout), Type File, File type input, Accepted formats gz, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/cphstats/sander.ceout.gz
+    type: File
+    defaultValue: SA.gz
+    format:
+      uri: edam:format_3987
+  - name: output_log_path
+    required: true
+    description: Path to the log file, Type string, File type output, Accepted formats log
+    type: string
+    defaultValue: system.log
+    format:
+      uri: edam:format_2330
+  - name: output_model_dir
+    required: true
+    description: Path to the output model directory
+    type: string
+    defaultValue: output
+    format:
+      uri: edam:format_2330
+  - name: validation_metrics
+    required: true
+    description: The metrics are used during validation and testing
+    type: string
+    defaultValue: np,logp,sas,qed,novelty,dc,unique,diversity,validity
+    format:
+      uri: edam:format_2330
+  - name: num_epochs
+    required: true
+    description: The number of training epochs, Type int
+    type: int
+    format:
+      uri: edam:format_2330
+  - name: save_frequency
+    required: true
+    description: The frequency to save the outputs, Type int
+    type: int
+    format:
+      uri: edam:format_2330
+outputs:
+  - name: output_log_path
+    required: true
+    description: Path to the log file
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: output_model_dir
+    required: true
+    description: Path to the output model directory
+    type: Directory
+    format:
+      uri: edam:format_2330
+ui:
+  - key: inputs.input_data_path
+    title: "input_data_path: "
+    description: "Path to the input data file, Type File, File type input, Accepted formats pkl, Example file https//github.com/bioexcel/biobb_ml/raw/master/biobb_ml/test/reference/classification/ref_output_model_support_vector_machine.pkl"
+    type: File
+  - key: inputs.input_NP_Score_path
+    title: "input_NP_Score_path: "
+    description: "Output ceout file (AMBER ceout), Type File, File type input, Accepted formats gz, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/cphstats/sander.ceout.gz"
+    type: File
+  - key: inputs.input_SA_Score_path
+    title: "input_SA_Score_path: "
+    description: "Output ceout file (AMBER ceout), Type File, File type input, Accepted formats gz, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/cphstats/sander.ceout.gz"
+    type: File
+  - key: inputs.output_log_path
+    title: "output_log_path: "
+    description: "Path to the log file, Type string, File type output, Accepted formats log"
+    type: string
+  - key: inputs.output_model_dir
+    title: "output_model_dir: "
+    description: ""
+    type: string
+  - key: inputs.validation_metrics
+    title: "validation_metrics: "
+    description: "The metrics are used during validation and testing"
+    type: string
+  - key: inputs.num_epochs
+    title: "num_epochs: "
+    description: "The number of training epochs, Type int"
+    type: int
+  - key: inputs.save_frequency
+    title: "save_frequency: "
+    description: "The frequency to save the outputs, Type int"
+    type: int
