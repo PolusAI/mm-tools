@@ -1,0 +1,105 @@
+specVersion: "0.1.0"
+name: run_trained_molgan_model
+version: 0.1.0
+container: run-trained-molgan-model-plugin
+entrypoint:
+title: run_trained_molgan_model
+description: MolGAN tool for generating small molecules
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_data_path
+    required: true
+    description: Path to the input data file, Type File, File type input, Accepted formats pkl, Example file https//github.com/bioexcel/biobb_ml/raw/master/biobb_ml/test/reference/classification/ref_output_model_support_vector_machine.pkl
+    type: File
+    defaultValue: system.pkl
+    format:
+      uri: edam:format_3653
+  - name: input_NP_Score_path
+    required: true
+    description: Output ceout file (AMBER ceout), Type File, File type input, Accepted formats gz, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/cphstats/sander.ceout.gz
+    type: File
+    defaultValue: NP.gz
+    format:
+      uri: edam:format_3987
+  - name: input_SA_Score_path
+    required: true
+    description: Output ceout file (AMBER ceout), Type File, File type input, Accepted formats gz, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/cphstats/sander.ceout.gz
+    type: File
+    defaultValue: SA.gz
+    format:
+      uri: edam:format_3987
+  - name: input_model_dir
+    required: true
+    description: Input directory of trained models
+    type: Directory
+    defaultValue: output
+    format:
+      uri: edam:format_2330
+  - name: output_log_path
+    required: true
+    description: Path to the log file, Type string, File type output, Accepted formats log
+    type: string
+    defaultValue: system.log
+    format:
+      uri: edam:format_2330
+  - name: output_sdf_path
+    required: true
+    description: Path to the output file, Type string, File type output, Accepted formats sdf
+    type: string
+    defaultValue: system.sdf
+    format:
+      uri: edam:format_3814
+  - name: num_samples
+    required: true
+    description: The number of training epochs, Type int
+    type: int
+    defaultValue: 1000
+    format:
+      uri: edam:format_2330
+outputs:
+  - name: output_log_path
+    required: true
+    description: Path to the log file
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: output_sdf_path
+    required: true
+    description: Path to the output file
+    type: File
+    format:
+      uri: edam:format_3814
+ui:
+  - key: inputs.input_data_path
+    title: "input_data_path: "
+    description: "Path to the input data file, Type File, File type input, Accepted formats pkl, Example file https//github.com/bioexcel/biobb_ml/raw/master/biobb_ml/test/reference/classification/ref_output_model_support_vector_machine.pkl"
+    type: File
+  - key: inputs.input_NP_Score_path
+    title: "input_NP_Score_path: "
+    description: "Output ceout file (AMBER ceout), Type File, File type input, Accepted formats gz, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/cphstats/sander.ceout.gz"
+    type: File
+  - key: inputs.input_SA_Score_path
+    title: "input_SA_Score_path: "
+    description: "Output ceout file (AMBER ceout), Type File, File type input, Accepted formats gz, Example file https//github.com/bioexcel/biobb_amber/raw/master/biobb_amber/test/data/cphstats/sander.ceout.gz"
+    type: File
+  - key: inputs.input_model_dir
+    title: "input_model_dir: "
+    description: ""
+    type: Directory
+  - key: inputs.output_log_path
+    title: "output_log_path: "
+    description: "Path to the log file, Type string, File type output, Accepted formats log"
+    type: string
+  - key: inputs.output_sdf_path
+    title: "output_sdf_path: "
+    description: "Path to the output file, Type string, File type output, Accepted formats sdf"
+    type: string
+  - key: inputs.num_samples
+    title: "num_samples: "
+    description: "The number of training epochs, Type int"
+    type: int
