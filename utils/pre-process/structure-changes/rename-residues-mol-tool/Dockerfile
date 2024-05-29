@@ -1,4 +1,4 @@
-# docker build -f Dockerfile -t mrbrandonwalker/rename_residues_mol_tool .
+# docker build -f Dockerfile -t polusai/rename-residues-mol-tool:0.1.0 .
 FROM condaforge/mambaforge
 
 ENV EXEC_DIR="/opt/executables"
