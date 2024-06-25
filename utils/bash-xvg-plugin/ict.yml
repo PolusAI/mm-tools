@@ -1,0 +1,53 @@
+specVersion: "0.1.0"
+name: bash_xvg
+version: 0.1.0
+container: bash-xvg-plugin
+entrypoint:
+title: bash_xvg
+description: Replace a column in one file with a column from another using AWK
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_xvg1_path
+    required: true
+    description: Path to the first XVG file
+    type: File
+    format:
+      uri: edam:format_2030
+  - name: input_xvg2_path
+    required: true
+    description: Path to the second XVG file
+    type: File
+    format:
+      uri: edam:format_2030
+  - name: output_xvg_path
+    required: true
+    description: Path to the output XVG file
+    type: string
+    defaultValue: system.xvg
+    format:
+      uri: edam:format_2030
+outputs:
+  - name: output_xvg_path
+    required: true
+    description: Path to the output XVG file
+    type: File
+    format:
+      uri: edam:format_2030
+ui:
+  - key: inputs.input_xvg1_path
+    title: "input_xvg1_path: "
+    description: "Path to the first XVG file"
+    type: File
+  - key: inputs.input_xvg2_path
+    title: "input_xvg2_path: "
+    description: "Path to the second XVG file"
+    type: File
+  - key: inputs.output_xvg_path
+    title: "output_xvg_path: "
+    description: "Path to the output XVG file"
+    type: string
