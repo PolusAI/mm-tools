@@ -1,0 +1,34 @@
+specVersion: "0.1.0"
+name: molgan
+version: 0.1.0
+container: molgan-plugin
+entrypoint:
+title: molgan
+description: An awesome function.
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_data_path
+    required: true
+    description: Path to the input data file
+    type: string
+  - name: input_NP_Score_path
+    required: true
+    description: Output ceout file (AMBER ceout)
+    type: string
+  - name: input_SA_Score_path
+    required: true
+    description: Output ceout file (AMBER ceout)
+    type: string
+  - name: input_model_dir
+    required: true
+    description:
+    type: string
+  - name: num_samples
+    required: true
+    description: The number of training epochs
+    type: int
