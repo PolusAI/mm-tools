@@ -1,0 +1,28 @@
+# This file was created Wed May 15 18:52:40 2024
+# Created by:
+#                 :-) GROMACS - gmx rms, 2022.2-conda_forge (-:
+#
+# Executable:   /usr/local/bin.AVX2_256/gmx
+# Data prefix:  /usr/local
+# Working dir:  /jAiJpn
+# Command line:
+#   gmx rms -fit none -n /var/lib/cwl/stg854534b4-dcba-4641-a8e0-289ad164dad7/MOL.ndx -s /var/lib/cwl/stg2e049b7d-2261-481a-8b2e-f87a749a2820/complex.gro -f /var/lib/cwl/stg728ca10c-9429-421c-87f5-a5da2d92df29/prod_align_protein_ca.pdb -o rmsd_equil_ligand_notime.xvg
+# gmx rms is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "RMSD"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "RMSD (nm)"
+@TYPE xy
+@ subtitle "resname_MOL after no fit"
+   0.0000000    0.0005156
+   0.0000000    0.0296825
+   0.0000000    0.0469071
+   0.0000000    0.0253868
+   0.0000000    0.0279059
+   0.0000000    0.0438598
+   0.0000000    0.0250407
+   0.0000000    0.0494208
+   0.0000000    0.0510193
+   0.0000000    0.0347102
