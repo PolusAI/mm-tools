@@ -1,0 +1,38 @@
+specVersion: "0.1.0"
+name: config_tag_pdb
+version: 0.1.0
+container: config-tag-pdb-plugin
+entrypoint:
+title: config_tag_pdb
+description: Returns a dictionary of the given arguments as a JSON-encoded string.
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: pdb_id
+    required: true
+    description: RSCB PDB code
+    type: string
+    format:
+      uri: edam:format_2330
+  - name: filter
+    required: true
+    description: Array of groups to be kept. If value is None or False no filter will be applied. All the possible values are defined in the https//www.wwpdb.org/documentation/file-format
+    type: string
+outputs:
+  - name: output_config_string
+    required: true
+    description: A dictionary of the given arguments as a JSON-encoded string.
+    type: string
+ui:
+  - key: inputs.pdb_id
+    title: "pdb_id: "
+    description: "RSCB PDB code"
+    type: string
+  - key: inputs.filter
+    title: "filter: "
+    description: "Array of groups to be kept. If value is None or False no filter will be applied. All the possible values are defined in the https//www.wwpdb.org/documentation/file-format"
+    type: string
