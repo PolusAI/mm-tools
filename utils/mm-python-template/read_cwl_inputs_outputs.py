@@ -155,7 +155,8 @@ def insert_inputs_outputs_cookiecutter(
         keys (List[str]): The keys to insert into the cookiecutter dictionary.
     """
     # add base_command to cookiecutter
-    cookiecutter["base_command"] = transformed["base_command"]
+    if "base_command" in transformed:
+        cookiecutter["base_command"] = transformed["base_command"]
     # add arguments to cookiecutter
     if "arguments" in transformed:
         cookiecutter["arguments"] = transformed["arguments"]
