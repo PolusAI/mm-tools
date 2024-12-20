@@ -1,0 +1,573 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:drugbank xmlns:ns0="http://www.drugbank.ca" version="1.0" exported_on="2024-06-06">
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB1193</ns0:drugbank-id>
+    <ns0:name>Drug9180</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>3263-01-2</ns0:cas-number>
+    <ns0:unii>UNII4440</ns0:unii>
+    <ns0:average-mass>396.50</ns0:average-mass>
+    <ns0:monoisotopic-mass>439.70</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>7700475</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey8840</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI3491</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES5443</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB8720</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="biotech">
+    <ns0:drugbank-id primary="true">DB9051</ns0:drugbank-id>
+    <ns0:name>Drug7020</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>4836-01-2</ns0:cas-number>
+    <ns0:unii>UNII4896</ns0:unii>
+    <ns0:average-mass>448.00</ns0:average-mass>
+    <ns0:monoisotopic-mass>339.12</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>3255888</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey6081</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI4865</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES1834</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB6952</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB3763</ns0:drugbank-id>
+    <ns0:name>Drug9033</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>4243-01-2</ns0:cas-number>
+    <ns0:unii>UNII9552</ns0:unii>
+    <ns0:average-mass>410.91</ns0:average-mass>
+    <ns0:monoisotopic-mass>276.24</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>1340178</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey8854</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI6632</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES8698</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB7692</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB3437</ns0:drugbank-id>
+    <ns0:name>Drug7099</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>3972-01-2</ns0:cas-number>
+    <ns0:unii>UNII6829</ns0:unii>
+    <ns0:average-mass>367.17</ns0:average-mass>
+    <ns0:monoisotopic-mass>111.38</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>5652181</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey9523</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI8564</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES3441</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB5533</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB7158</ns0:drugbank-id>
+    <ns0:name>Drug3491</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>7602-01-2</ns0:cas-number>
+    <ns0:unii>UNII1079</ns0:unii>
+    <ns0:average-mass>169.07</ns0:average-mass>
+    <ns0:monoisotopic-mass>454.30</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>7275507</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey4848</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI5085</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES5755</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB2260</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB3593</ns0:drugbank-id>
+    <ns0:name>Drug8863</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>4103-01-2</ns0:cas-number>
+    <ns0:unii>UNII1309</ns0:unii>
+    <ns0:average-mass>314.69</ns0:average-mass>
+    <ns0:monoisotopic-mass>345.05</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>2622924</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey8183</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI9997</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES2154</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB7554</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB7335</ns0:drugbank-id>
+    <ns0:name>Drug4801</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>8814-01-2</ns0:cas-number>
+    <ns0:unii>UNII6987</ns0:unii>
+    <ns0:average-mass>149.96</ns0:average-mass>
+    <ns0:monoisotopic-mass>206.80</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>4367264</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey1494</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI5278</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES2534</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB9333</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB1046</ns0:drugbank-id>
+    <ns0:name>Drug8209</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>2566-01-2</ns0:cas-number>
+    <ns0:unii>UNII6800</ns0:unii>
+    <ns0:average-mass>223.91</ns0:average-mass>
+    <ns0:monoisotopic-mass>192.80</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>1045399</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey6639</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI5577</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES9937</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB9547</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB2929</ns0:drugbank-id>
+    <ns0:name>Drug2385</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>4854-01-2</ns0:cas-number>
+    <ns0:unii>UNII5494</ns0:unii>
+    <ns0:average-mass>326.39</ns0:average-mass>
+    <ns0:monoisotopic-mass>274.70</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>4989494</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey5085</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI2296</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES1291</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB6942</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+  <ns0:drug type="small molecule">
+    <ns0:drugbank-id primary="true">DB6242</ns0:drugbank-id>
+    <ns0:name>Drug4247</ns0:name>
+    <ns0:description>This is a fake drug used for testing purposes.</ns0:description>
+    <ns0:cas-number>5891-01-2</ns0:cas-number>
+    <ns0:unii>UNII2176</ns0:unii>
+    <ns0:average-mass>141.48</ns0:average-mass>
+    <ns0:monoisotopic-mass>308.53</ns0:monoisotopic-mass>
+    <ns0:state>solid</ns0:state>
+    <ns0:groups>
+      <ns0:group>approved</ns0:group>
+    </ns0:groups>
+    <ns0:general-references>
+      <ns0:articles>
+        <ns0:article>
+          <ns0:pubmed-id>2946505</ns0:pubmed-id>
+        </ns0:article>
+      </ns0:articles>
+    </ns0:general-references>
+    <ns0:synthesis-reference>Synthesis reference text.</ns0:synthesis-reference>
+    <ns0:indication>Indication text.</ns0:indication>
+    <ns0:pharmacodynamics>Pharmacodynamics text.</ns0:pharmacodynamics>
+    <ns0:mechanism-of-action>Mechanism of action text.</ns0:mechanism-of-action>
+    <ns0:toxicity>Toxicity text.</ns0:toxicity>
+    <ns0:metabolism>Metabolism text.</ns0:metabolism>
+    <ns0:absorption>Absorption text.</ns0:absorption>
+    <ns0:half-life>Half-life text.</ns0:half-life>
+    <ns0:protein-binding>Protein binding text.</ns0:protein-binding>
+    <ns0:route-of-elimination>Route of elimination text.</ns0:route-of-elimination>
+    <ns0:volume-of-distribution>Volume of distribution text.</ns0:volume-of-distribution>
+    <ns0:clearance>Clearance text.</ns0:clearance>
+    <ns0:classification>
+      <ns0:direct-parent>Direct parent text.</ns0:direct-parent>
+    </ns0:classification>
+    <ns0:salts>
+      <ns0:salt>
+        <ns0:name>Salt name</ns0:name>
+      </ns0:salt>
+    </ns0:salts>
+    <ns0:calculated-properties>
+      <ns0:property>
+        <ns0:kind>InChIKey</ns0:kind>
+        <ns0:value>InChIKey7042</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>InChI</ns0:kind>
+        <ns0:value>InChI7556</ns0:value>
+      </ns0:property>
+      <ns0:property>
+        <ns0:kind>SMILES</ns0:kind>
+        <ns0:value>SMILES2803</ns0:value>
+      </ns0:property>
+    </ns0:calculated-properties>
+    <ns0:pdb-entries>
+      <ns0:pdb-entry>PDB3506</ns0:pdb-entry>
+    </ns0:pdb-entries>
+  </ns0:drug>
+</ns0:drugbank>
