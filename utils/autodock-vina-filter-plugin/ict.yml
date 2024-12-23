@@ -1,0 +1,154 @@
+specVersion: "0.1.0"
+name: autodock_vina_filter
+version: 0.1.0
+container: autodock-vina-filter-plugin
+entrypoint:
+title: autodock_vina_filter
+description: Filters results of the AutoDock Vina software.
+author: Data Scientist
+contact: data.scientist@labshare.org
+repository:
+documentation:
+citation:
+
+inputs:
+  - name: input_log_path
+    required: true
+    description: Path to the log file, Type string, File type output, Accepted formats log, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/vina/ref_output_vina.log
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: input_log_paths
+    required: true
+    description: Path to the log files, Type string, File type output, Accepted formats log, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/vina/ref_output_vina.log
+    type: File[]
+    format:
+      uri: edam:format_2330
+  - name: docking_score_cutoff
+    required: true
+    description: Cutoff threshold for filtering docking scores, Type float
+    type: float
+    format:
+      uri: edam:format_2330
+  - name: max_num_poses_per_ligand
+    required: true
+    description: Maximum number of poses per initial ligand, Type int
+    type: int
+    defaultValue: -1
+    format:
+      uri: edam:format_2330
+  - name: max_num_poses_total
+    required: true
+    description: Maximum number of poses total, Type int
+    type: int
+    defaultValue: -1
+    format:
+      uri: edam:format_2330
+  - name: input_txt_path
+    required: true
+    description: Experimental binding free energy data file (if any)
+    type: File
+    format:
+      uri: edam:format_2330
+  - name: rescore
+    required: true
+    description: Use True if autodock vina was run with --rescore
+    type: boolean
+    format:
+      uri: edam:format_2330
+  - name: input_ligand_pdbqt_path
+    required: true
+    description: Path to the input PDBQT ligands, Type string, File type input, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/data/vina/vina_ligand.pdbqt
+    type: {'type': 'array', 'items': {'type': 'array', 'items': 'File'}}
+    format:
+      uri: edam:format_1476
+  - name: output_ligand_pdbqt_path
+    required: true
+    description: Path to the output PDBQT ligand files, Type string, File type output, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/vina/ref_output_vina.pdbqt
+    type: string
+    defaultValue: .
+    format:
+      uri: edam:format_1476
+  - name: input_receptor_pdbqt_path
+    required: true
+    description: Path to the input PDBQT receptors, Type string, File type input, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/data/vina/vina_ligand.pdbqt
+    type: {'type': 'array', 'items': {'type': 'array', 'items': 'File'}}
+    format:
+      uri: edam:format_1476
+  - name: output_receptor_pdbqt_path
+    required: true
+    description: Path to the output PDBQT receptor files, Type string, File type output, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/vina/ref_output_vina.pdbqt
+    type: string
+    defaultValue: .
+    format:
+      uri: edam:format_1476
+outputs:
+  - name: output_ligand_pdbqt_path
+    required: true
+    description: Path to the output PDBQT file
+    type: File[]
+    format:
+      uri: edam:format_1476
+  - name: output_receptor_pdbqt_path
+    required: true
+    description: Path to the output PDBQT file
+    type: File[]
+    format:
+      uri: edam:format_1476
+  - name: docking_scores
+    required: true
+    description: Estimated Free Energies of Binding
+    type: {'type': 'array', 'items': 'float'}
+  - name: experimental_binding_data
+    required: true
+    description: Experimental binding data (if any)
+    type: ['null', {'type': 'array', 'items': 'float'}]
+  - name: experimental_dGs
+    required: true
+    description: Experimental binding free energy dG values (if any)
+    type: ['null', {'type': 'array', 'items': 'float'}]
+ui:
+  - key: inputs.input_log_path
+    title: "input_log_path: "
+    description: "Path to the log file, Type string, File type output, Accepted formats log, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/vina/ref_output_vina.log"
+    type: File
+  - key: inputs.input_log_paths
+    title: "input_log_paths: "
+    description: "Path to the log files, Type string, File type output, Accepted formats log, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/vina/ref_output_vina.log"
+    type: File[]
+  - key: inputs.docking_score_cutoff
+    title: "docking_score_cutoff: "
+    description: "Cutoff threshold for filtering docking scores, Type float"
+    type: float
+  - key: inputs.max_num_poses_per_ligand
+    title: "max_num_poses_per_ligand: "
+    description: "Maximum number of poses per initial ligand, Type int"
+    type: int
+  - key: inputs.max_num_poses_total
+    title: "max_num_poses_total: "
+    description: "Maximum number of poses total, Type int"
+    type: int
+  - key: inputs.input_txt_path
+    title: "input_txt_path: "
+    description: "Experimental binding free energy data file (if any)"
+    type: File
+  - key: inputs.rescore
+    title: "rescore: "
+    description: "Use True if autodock vina was run with --rescore"
+    type: checkbox
+  - key: inputs.input_ligand_pdbqt_path
+    title: "input_ligand_pdbqt_path: "
+    description: "Path to the input PDBQT ligands, Type string, File type input, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/data/vina/vina_ligand.pdbqt"
+    type: {'type': 'array', 'items': {'type': 'array', 'items': 'File'}}
+  - key: inputs.output_ligand_pdbqt_path
+    title: "output_ligand_pdbqt_path: "
+    description: "Path to the output PDBQT ligand files, Type string, File type output, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/vina/ref_output_vina.pdbqt"
+    type: string
+  - key: inputs.input_receptor_pdbqt_path
+    title: "input_receptor_pdbqt_path: "
+    description: "Path to the input PDBQT receptors, Type string, File type input, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/data/vina/vina_ligand.pdbqt"
+    type: {'type': 'array', 'items': {'type': 'array', 'items': 'File'}}
+  - key: inputs.output_receptor_pdbqt_path
+    title: "output_receptor_pdbqt_path: "
+    description: "Path to the output PDBQT receptor files, Type string, File type output, Accepted formats pdbqt, Example file https//github.com/bioexcel/biobb_vs/raw/master/biobb_vs/test/reference/vina/ref_output_vina.pdbqt"
+    type: string
