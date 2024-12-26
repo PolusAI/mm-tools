@@ -1,0 +1,6 @@
+name: project_env
+channels:
+  - conda-forge
+dependencies:
+  - python==3.10
+  - pymol-open-source==3.0.0
